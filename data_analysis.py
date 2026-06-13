@@ -19,7 +19,7 @@ print(top_protein[['Recipe_name', 'Protein(g)']])
 
 df['Protein_Fat_Ratio'] = df['Protein(g)'] / df['Fat(g)']
 
-plt.figure(figsize=(12, 6))
+plt.figure(figsize=(8, 6))
 sns.barplot(x='Recipe_name', y='Protein(g)', data=top_protein)
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
