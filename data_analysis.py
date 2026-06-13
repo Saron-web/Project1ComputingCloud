@@ -19,11 +19,12 @@ print(top_protein[['Recipe_name', 'Protein(g)']])
 
 df['Protein_Fat_Ratio'] = df['Protein(g)'] / df['Fat(g)']
 
-plt.figure(figsize=(10,5))
-sns.barplot(data=top_protein, x='Recipe_name', y='Protein(g)')
-plt.xticks(rotation=45)
+plt.figure(figsize=(12, 6))
+sns.barplot(x='Recipe_name', y='Protein(g)', data=top_protein)
+plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
-plt.savefig("bar_chart.png")
+plt.savefig('avg_protein.png')
+
 
 plt.figure(figsize=(8,6))
 sns.heatmap(df[['Protein(g)', 'Carbs(g)', 'Fat(g)']].corr(), annot=True)
@@ -31,4 +32,4 @@ plt.savefig("heatmap.png")
 
 plt.figure(figsize=(8,6))
 sns.scatterplot(data=df, x='Carbs(g)', y='Protein(g)', hue='Diet_type')
-plt.savefig("scatter_plot.png")
+plt.savefig("scatter_top_protien.png")
