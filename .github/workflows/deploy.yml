@@ -39,3 +39,7 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/diet-analysis:latest
+
+      - name: Run container to simulate deployment
+        run: |
+          docker run --rm ${{ secrets.DOCKER_USERNAME }}/diet-analysis:latest
